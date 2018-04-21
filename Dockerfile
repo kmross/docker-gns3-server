@@ -1,6 +1,6 @@
 FROM ubuntu:16.04
 
-MAINTAINER kmross
+#MAINTAINER kmross
 
 ENV DEBIAN_FRONTEND noninteractive
 ENV depends="python-dev ubridge dynamips vpcs qemu-kvm libvirt-bin qemu-utils qemu-system python-pip wget cmake vim libelf-dev libpcap0.8-dev zip gns3-server"
@@ -25,8 +25,8 @@ RUN make install -C /root/ubridge-master/
 #housekeeping
 RUN rm -f /root/master.zip && rm -rf /root/ubridge-master/
 
-CMD ["sleep","infinity"]
-#CMD gns3server
+#CMD ["sleep","infinity"]
+CMD gns3server
 
 EXPOSE 3080 22 23
 
